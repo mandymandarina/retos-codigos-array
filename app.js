@@ -68,8 +68,46 @@ function findPairForSum(array, number) {
  //Escriba una función llamada "filterOddElements".Dado un array de números,"filterOddElements" devuelve un array que contiene sólo los números impares del array dado.
 
  function filterOddElements(arr) {
-
-
+  var arrx= [];
+  for (var i = 0; i < arr.length; i++) {
+    if(arr[i] %2 !== 0 ){
+       arrx.push(arr[i]);
+    }
+ }
+ return arrx;
  }
  var output = filterOddElements([1, 2, 3, 4, 5]);
 console.log(output);
+
+//ejercicio 7
+//Escriba una función llamada "findSmallestNumberAmongMixedElements".Dado un arreglo de elementos mixtos, "findSmallestNumberAmongMixedElements" devuelve el número más pequeño dentro del arreglo dado.Notas:Si el arreglo está vacío, debería devolver 0.Si el arreglo no contiene números, debería devolver 0.
+
+function findShortestWordAmongMixedElements(arr) {
+  
+  if (arr.length === 0) {
+    return "";
+  }
+  var arrx = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "string") {
+      arrx.push(arr[i]);
+    }
+  }
+  if (arrx.length === 0) {
+    return "";
+  }
+  var arrShort = arrx[0];
+  for (var j = 1; j < arrx.length; j++) {
+    if (arrShort.length > arrx[j].length) {
+      arrShort = newArr[j];
+    }
+  }
+  return arrShort;
+}
+
+var output = findShortestWordAmongMixedElements([4, 'two', 2, 'three']);
+console.log(output); 
+
+//ejercicio 8
+
+
