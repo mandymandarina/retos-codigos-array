@@ -50,11 +50,11 @@ console.log(output);
 //Dada una lista de números enteros no negativos y una suma objetivo, encuentre un par de números que sumen a la suma objetivo.
 
 function findPairForSum(array, number) {
-  for (var i = 0; i < array.length; i++) {
-    var arr = array[i] 
-    var arrx = (array.slice(0, i)).concat(array.slice(i+1, array.length));
+  for (let i = 0; i < array.length; i++) {
+    const arr = array[i] 
+    const arrx = (array.slice(0, i)).concat(array.slice(i+1, array.length));
     
-    for (var j = 0; j < arrx.length ; j++) {
+    for (let j = 0; j < arrx.length ; j++) {
       if (arr + arrx[j] === number) {
         return [arr, arrx[j]];
       }
@@ -68,7 +68,7 @@ function findPairForSum(array, number) {
  //Escriba una función llamada "filterOddElements".Dado un array de números,"filterOddElements" devuelve un array que contiene sólo los números impares del array dado.
 
  function filterOddElements(arr) {
-  var arrx= [];
+  const arrx= [];
   for (var i = 0; i < arr.length; i++) {
     if(arr[i] %2 !== 0 ){
        arrx.push(arr[i]);
@@ -87,8 +87,8 @@ function findShortestWordAmongMixedElements(arr) {
   if (arr.length === 0) {
     return "";
   }
-  var arrx = [];
-  for (var i = 0; i < arr.length; i++) {
+  const arrx = [];
+  for (let i = 0; i < arr.length; i++) {
     if (typeof arr[i] === "string") {
       arrx.push(arr[i]);
     }
@@ -96,10 +96,10 @@ function findShortestWordAmongMixedElements(arr) {
   if (arrx.length === 0) {
     return "";
   }
-  var arrShort = arrx[0];
-  for (var j = 1; j < arrx.length; j++) {
+  const arrShort = arrx[0];
+  for (let j = 1; j < arrx.length; j++) {
     if (arrShort.length > arrx[j].length) {
-      arrShort = newArr[j];
+      arrShort = arrx[j];
     }
   }
   return arrShort;
@@ -110,4 +110,32 @@ console.log(output);
 
 //ejercicio 8
 
+//Escriba una función llamada "findSmallestNumberAmongMixedElements".Dado un arreglo de elementos mixtos, "findSmallestNumberAmongMixedElements" devuelve el número más pequeño dentro del arreglo dado.Notas: Si el arreglo está vacío, debería devolver 0. Si el arreglo no contiene números, debería devolver 0.
 
+function findSmallestNumberAmongMixedElements(arr) {
+  if (arr.length === 0){
+    return 0;    
+  }
+  const arrx =[];
+  for (let i=0; i <arr.length; i++){
+    if (typeof arr[i] === "number"){
+    arrx.push(arr[i]);
+    }
+  }
+    if (arrx.length === 0) {
+      return 0;
+    }
+  
+  const smallNum = arrx[0];
+  for (let j=0; j<arrx.length; j++){
+    if(smallNum >arrx[j]){
+      smallNum = arrx[j];
+    }
+  }
+  return smallNum;
+ 
+}
+var output = findSmallestNumberAmongMixedElements([4, 'lincoln', 9, 'octopus']);
+console.log(output)
+
+//ejercicio 9
